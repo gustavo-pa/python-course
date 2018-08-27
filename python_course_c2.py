@@ -15,21 +15,38 @@ text=infile.read()
 #
 ###quiz2###"
 words=text.split()
-# number_of_hits=0
-# item_to_count="in"
-# for letter in words:
-#     if letter == item_to_count:
-#         number_of_hits+=1
-# print(number_of_hits)
-####################################
-def count_in_list(item_to_count, list_to_search):
-    number_of_hits=0
-    for item in list_to_search:
-        if item == item_to_count:
-            number_of_hits+=1
-    return number_of_hits
-print(count_in_list("an", words))
-###quiz3###
-print(count_in_list("the",words))
-#
-#
+# # number_of_hits=0
+# # item_to_count="in"
+# # for letter in words:
+# #     if letter == item_to_count:
+# #         number_of_hits+=1
+# # print(number_of_hits)
+# ####################################
+# def count_in_list(item_to_count, list_to_search):
+#     number_of_hits=0
+#     for item in list_to_search:
+#         if item == item_to_count:
+#             number_of_hits+=1
+#     return number_of_hits
+# print(count_in_list("an", words))
+# ###quiz3###
+# print(count_in_list("the",words))
+# #
+#A more general count
+#take1
+# counts={}
+# for word in words:
+#     if word in counts:
+#         counts[word] = counts[word]+1
+#     else:
+#         counts[word] = 1
+# print(counts)
+def counter(list_to_search):
+    counts={}
+    for word in list_to_search:
+        if word in counts:
+            counts[word]=counts[word]+1
+        else:
+            counts[word]=1
+    return counts
+print(counter(words))
